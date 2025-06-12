@@ -1,63 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html class="scroll-smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aprenda JS</title>
     <link rel="stylesheet" href="src/output.css" />
+    <script src="src/js/script.js" defer></script>
   </head>
   <body class="bg-gray-900">
     <header
-      class="fixed bg-gray-900 top-0 left-0 w-full h-20 flex justify-between items-center pl-3 md:pl-4 pr-4 md:pr-12"
+      class="fixed bg-gray-900 top-0 left-0 w-full h-20 flex items-center p-3 md:p-8"
     >
-      <img
-        class="w-12 md:w-13 rounded-xl"
-        src="assets/javascript-plain.svg"
-        alt="logo-js"
-      />
-      <nav class="flex gap-3 md:gap-8 items-center">
+      <nav class="flex justify-between w-full items-center">
+        <img
+          class="w-12 md:w-13 rounded-xl"
+          src="assets/javascript-plain.svg"
+          alt="logo-js"
+        />
         <ul
-          class="flex text-gray-100 gap-3 md:gap-8 uppercase font-poppins text-xs font-semibold subpixel-antialiased tracking-wider"
+          class="hidden md:flex text-gray-100 gap-3 md:gap-14 uppercase font-poppins text-xs font-semibold subpixel-antialiased tracking-wider"
         >
           <li
             class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
           >
-            About
+            <a href="#home">About</a>
           </li>
-          <li class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300">Download</li>
-          <li class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300">Contact</li>
+          <li
+            class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
+          >
+            <a href="#download">Download</a>
+          </li>
+          <li
+            class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
+          >
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
-        <button
-          class="bg-yellow-200 cursor-pointer text-gray-900 w-15 md:w-20 rounded-2xl h-8 md:h-10 font-poppins font-semibold
-          hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
-        >
-          Login
-        </button>
+        <div class="space-x-4">
+          <button
+            class="hidden md:block bg-yellow-200 cursor-pointer text-gray-900 w-15 md:w-20 rounded-2xl h-8 md:h-10 font-poppins font-semibold hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
+          >
+            Login
+          </button>
+          <button id="toggle-nav" class="md:hidden text-amber-50"><img id="menu-icon" class="w-6 mr-2" src="assets/menu-rows.png" alt="menu-bar"></button>
+        </div>
       </nav>
     </header>
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden fixed top-22 right-2 z-50 bg-gray-900 w-1/2 p-4 shadow-lg rounded-2xl space-y-5"
+    >
+      <ul class="flex flex-col text-gray-100 font-poppins space-y-4 items-center">
+        <li><a href="#home" class="hover:text-yellow-200 active:text-yellow-400">About</a></li>
+        <li><a href="#download" class="hover:text-yellow-200 active:text-yellow-400">Download</a></li>
+        <li><a href="#contact" class="hover:text-yellow-200 active:text-yellow-400">Contact</a></li>
+      </ul>
+      <button
+        class="bg-yellow-200 cursor-pointer text-gray-900 w-full rounded-md h-8 font-poppins font-semibold hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
+      >
+        Login
+      </button>
+    </div>
     <main>
-      <section class="h-screen grid grid-cols-2 place-items-center">
-        <div class="bg-gray-700 w-40 md:w-80 md:h-64 h-30 rounded-2xl p-3 md:p-5 font-poppins flex flex-col gap-2 md:gap-3">
-            <h1 class="bg-gradient-to-r from-green-600 via-yellow-300 to-yellow-200 font-extrabold text-xl md:text-3xl text-transparent bg-clip-text">Only a test</h1>
-            <p class="text-sm text-gray-400">This page is just for learning Tailwind</p>
+      <section
+        id="home"
+        class="h-screen grid grid-cols-1 md:grid-cols-2 place-items-center"
+      >
+        <div
+          class="bg-gray-700 w-40 md:w-80 md:h-64 h-30 rounded-2xl p-3 md:p-5 font-poppins flex flex-col gap-2 md:gap-3"
+        >
+          <h1
+            class="bg-gradient-to-r from-green-600 via-yellow-300 to-yellow-200 font-extrabold text-xl md:text-3xl text-transparent bg-clip-text"
+          >
+            Only a test
+          </h1>
+          <p class="text-sm text-gray-400">
+            This page is just for learning Tailwind
+          </p>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <img class="w-20 md:w-40" src="assets/html5-original.svg" alt="logo-html">
-          <img class="w-20 md:w-40" src="assets/tailwindcss-original.svg" alt="logo-tailwind">
-          <img class="col-span-2 justify-self-center w-20 md:w-40 rounded-xl" src="assets/javascript-plain.svg" alt="logo-js">
+          <img
+            class="w-20 md:w-40"
+            src="assets/html5-original.svg"
+            alt="logo-html"
+          />
+          <img
+            class="w-20 md:w-40"
+            src="assets/tailwindcss-original.svg"
+            alt="logo-tailwind"
+          />
+          <img
+            class="col-span-2 justify-self-center w-20 md:w-40 rounded-xl"
+            src="assets/javascript-plain.svg"
+            alt="logo-js"
+          />
         </div>
-        
-    </section>
-    <section class="h-screen">
+      </section>
+      <section id="download" class="h-screen">
         <h1>Nothing to download</h1>
         <button>Don't Download</button>
-    </section>
-    <section class="h-screen">
-        <input class="bg-white w-20 h-10" type="text" id="input-name">
-        <input type="text" id="input-mail">
-        <input class="bg-white w-20 h-10" type="tel" id="input-phone">
-    </section>
+      </section>
+      <section id="contact" class="h-screen">
+        <input class="bg-white w-20 h-10" type="text" id="input-name" />
+        <input type="text" id="input-mail" />
+        <input class="bg-white w-20 h-10" type="tel" id="input-phone" />
+      </section>
     </main>
-    
   </body>
 </html>
