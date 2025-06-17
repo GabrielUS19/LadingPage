@@ -4,3 +4,7 @@
 @theme {
   --font-poppins: "Poppins";
 }
+
+.active-link {
+  @apply md:after:w-full md:after:left-0 text-amber-100
+}

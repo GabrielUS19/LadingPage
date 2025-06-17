@@ -9,6 +9,7 @@
   </head>
   <body class="bg-gray-900">
     <header
+      id="header"
       class="fixed bg-gray-900 top-0 left-0 w-full h-20 flex items-center p-3 md:p-8"
     >
       <nav class="flex justify-between w-full items-center">
@@ -20,29 +21,48 @@
         <ul
           class="hidden md:flex text-gray-100 gap-3 md:gap-14 uppercase font-poppins text-xs font-semibold subpixel-antialiased tracking-wider"
         >
-          <li
-            class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
-          >
-            <a href="#home">About</a>
+          <li>
+            <a
+              href="#home"
+              class="active-link select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
+              data-class="nav-link"
+              >About</a
+            >
           </li>
-          <li
-            class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
-          >
-            <a href="#download">Download</a>
+          <li>
+            <a
+              href="#download"
+              class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
+              data-class="nav-link"
+              >Download</a
+            >
           </li>
-          <li
-            class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
-          >
-            <a href="#contact">Contact</a>
+          <li>
+            <a
+              href="#contact"
+              class="select-none cursor-pointer relative after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-yellow-200 transition-colors duration-300"
+              data-class="nav-link"
+              >Contact</a
+            >
           </li>
         </ul>
         <div class="space-x-4">
           <button
-            class="hidden md:block bg-yellow-200 cursor-pointer text-gray-900 w-15 md:w-20 rounded-2xl h-8 md:h-10 font-poppins font-semibold hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
+            class="hidden md:block shadow-xl/20 shadow-amber-200 transition-all bg-yellow-200 cursor-pointer text-gray-900 w-15 md:w-20 rounded-2xl h-8 md:h-10 font-poppins font-semibold hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
           >
             Login
           </button>
-          <button id="toggle-nav" class="md:hidden text-amber-50"><img id="menu-icon" class="w-6 mr-2" src="assets/menu-rows.png" alt="menu-bar"></button>
+          <button
+            id="toggle-nav"
+            class="md:hidden text-amber-50 hover:opacity-95 active:scale-95"
+          >
+            <img
+              id="menu-icon"
+              class="w-6 mr-2"
+              src="assets/menu-rows.png"
+              alt="menu-bar"
+            />
+          </button>
         </div>
       </nav>
     </header>
@@ -50,13 +70,36 @@
       id="mobile-menu"
       class="hidden md:hidden fixed top-22 right-2 z-50 bg-gray-900 w-1/2 p-4 shadow-lg rounded-2xl space-y-5"
     >
-      <ul class="flex flex-col text-gray-100 font-poppins space-y-4 items-center">
-        <li><a href="#home" class="hover:text-yellow-200 active:text-yellow-400">About</a></li>
-        <li><a href="#download" class="hover:text-yellow-200 active:text-yellow-400">Download</a></li>
-        <li><a href="#contact" class="hover:text-yellow-200 active:text-yellow-400">Contact</a></li>
+      <ul
+        class="flex flex-col text-gray-100 font-poppins space-y-4 items-center"
+      >
+        <li>
+          <a
+            href="#home"
+            class="active-link hover:text-yellow-200 active:text-yellow-400"
+            data-class="nav-link"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#download"
+            class="hover:text-yellow-200 active:text-yellow-400"
+            data-class="nav-link"
+            >Download</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="hover:text-yellow-200 active:text-yellow-400"
+            data-class="nav-link"
+            >Contact</a
+          >
+        </li>
       </ul>
       <button
-        class="bg-yellow-200 cursor-pointer text-gray-900 w-full rounded-md h-8 font-poppins font-semibold hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
+        class="bg-yellow-200 transition-all shadow-xl/20 shadow-amber-200 cursor-pointer text-gray-900 w-full rounded-md h-8 font-poppins font-semibold hover:scale-105 hover:bg-yellow-300 active:scale-95 active:bg-yellow-400"
       >
         Login
       </button>
@@ -64,7 +107,7 @@
     <main>
       <section
         id="home"
-        class="h-screen grid grid-cols-1 md:grid-cols-2 place-items-center"
+        class="h-screen mt-20 grid grid-cols-1 md:grid-cols-2 place-items-center section"
       >
         <div
           class="bg-gray-700 w-40 md:w-80 md:h-64 h-30 rounded-2xl p-3 md:p-5 font-poppins flex flex-col gap-2 md:gap-3"
@@ -80,7 +123,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
           <img
-            class="w-20 md:w-40"
+            class="w-20 md:w-40 transition-all"
             src="assets/html5-original.svg"
             alt="logo-html"
           />
@@ -96,11 +139,11 @@
           />
         </div>
       </section>
-      <section id="download" class="h-screen">
+      <section id="download" class="h-screen section">
         <h1>Nothing to download</h1>
         <button>Don't Download</button>
       </section>
-      <section id="contact" class="h-screen">
+      <section id="contact" class="h-screen section">
         <input class="bg-white w-20 h-10" type="text" id="input-name" />
         <input type="text" id="input-mail" />
         <input class="bg-white w-20 h-10" type="tel" id="input-phone" />
