@@ -6,6 +6,8 @@ const header = document.getElementById("header");
 const links = document.querySelectorAll('[data-class="nav-link"]');
 const sections = document.querySelectorAll(".section");
 
+const h1About = document.getElementById("about-h1");
+
 toggleButton.addEventListener("click", function () {
   mobileMenu.classList.toggle("hidden");
 
@@ -40,3 +42,15 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+function writeH1About(element, text, count) {
+  if (count < text.length) {
+    setTimeout(() => {
+      element.textContent += text.charAt(count);
+      count++;
+      writeH1About(element, text, count);
+    }, 60);
+  }
+}
+
+writeH1About(h1About, "Learning Tailwind", 0);
