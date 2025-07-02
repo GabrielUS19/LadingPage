@@ -6,7 +6,9 @@ const header = document.getElementById("header");
 const links = document.querySelectorAll('[data-class="nav-link"]');
 const sections = document.querySelectorAll(".section");
 
-const h1About = document.getElementById("about-h1");
+const h1Sections = document.querySelectorAll(".h1-section");
+
+// Menu de navegação mobile
 
 toggleButton.addEventListener("click", function () {
   mobileMenu.classList.toggle("hidden");
@@ -18,30 +20,50 @@ toggleButton.addEventListener("click", function () {
   }
 });
 
+// Sombra no header ao deslizar
+
 window.addEventListener("scroll", () => {
   if (window.scrollY !== 0) {
-    header.classList.add("shadow-xl/20");
+    header.classList.add("shadow-header");
   } else {
-    header.classList.remove("shadow-xl/20");
+    header.classList.remove("shadow-header");
   }
-
-  sections.forEach((section) => {
-    const beginPoint = section.offsetTop - 300;
-    const endPoint = beginPoint + section.clientHeight + 100;
-
-    if (window.scrollY >= beginPoint && window.scrollY <= endPoint) {
-      links.forEach((link) => {
-        var index = link.href;
-
-        if (index.substring(index.indexOf("#") + 1) == section.id) {
-          link.classList.add("active-link");
-        } else {
-          link.classList.remove("active-link");
-        }
-      });
-    }
-  });
 });
+
+// Detecção da página atual
+
+const observerSection = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        links.forEach((link) => {
+          if (
+            entry.target.id == link.href.substring(link.href.indexOf("#") + 1)
+          ) {
+            link.classList.add("active-link");
+          }
+        });
+      } else {
+        links.forEach((link) => {
+          if (
+            entry.target.id == link.href.substring(link.href.indexOf("#") + 1)
+          ) {
+            link.classList.remove("active-link");
+          }
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+sections.forEach((section) => {
+  observerSection.observe(section);
+});
+
+// Animação de digitação
 
 function writeH1About(element, text, count) {
   if (count < text.length) {
@@ -53,4 +75,23 @@ function writeH1About(element, text, count) {
   }
 }
 
-writeH1About(h1About, "Learning Tailwind", 0);
+const observerH1Section = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let element = entry.target;
+        let text = element.getAttribute("data-text");
+        if (!element.textContent) {
+          writeH1About(element, text, 0);
+        }
+      }
+    });
+  },
+  {
+    threshold: 1,
+  }
+);
+
+h1Sections.forEach((h1Section) => {
+  observerH1Section.observe(h1Section);
+});

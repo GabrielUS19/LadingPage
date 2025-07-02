@@ -8,3 +8,7 @@
 .active-link {
   @apply md:after:w-full md:after:left-0 text-amber-100
 }
+
+.shadow-header {
+  @apply shadow-xl/10 shadow-blue-800
+}
