@@ -4,7 +4,7 @@ Site simples para estudo e portifólio, feito com HTML, CSS, JS e TailwindCSS
 
 ## Demonstração
 
-Acesse o site: Em breve
+Acesse o site: https://lading-page-rouge-beta.vercel.app/
 
 ## Tecnologias utilizadas
 
