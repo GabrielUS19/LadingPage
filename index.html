@@ -138,7 +138,10 @@
           />
         </div>
       </section>
-      <section id="download" class="h-screen section flex justify-center items-center">
+      <section
+        id="download"
+        class="h-screen section flex justify-center items-center"
+      >
         <div class="flex flex-col gap-15">
           <div class="flex flex-col items-center text-center">
             <h1
@@ -156,10 +159,32 @@
           </button>
         </div>
       </section>
-      <section id="contact" class="h-screen section">
-        <input class="bg-white w-20 h-10" type="text" id="input-name" />
-        <input type="text" id="input-mail" />
-        <input class="bg-white w-20 h-10" type="tel" id="input-phone" />
+      <section
+        id="contact"
+        class="h-screen section flex items-center overflow-hidden"
+      >
+        <div class="hidden md:block self-start w-xl xl:w-4xl">
+          <img src="assets/customer-service.png" alt="customer-img" />
+        </div>
+        <div
+          class="w-md md:w-xl flex flex-col gap-10 justify-center items-center"
+        >
+          <div class="gap-3 self-center text-center">
+            <h1
+              class="h1-section text-yellow-600 text-4xl xl:text-5xl font-bold"
+              data-text="CONTACT US"
+            ></h1>
+            <p class="text-gray-400">
+              Talk to our team of qualified professionals
+            </p>
+          </div>
+
+          <button
+            class="w-1/2 bg-gradient-to-r from-purple-900 to-pink-600 rounded-2xl h-12 font-bold text-gray-200 hover:scale-105 hover:bg-gradient-to-r hover:from-purple-900 hover:to-purple-900 active:bg-gradient-to-l active:from-pink-600 active:to-pink-600 active:scale-95 transition ease-in-out hover:duration-500"
+          >
+            Contact US
+          </button>
+        </div>
       </section>
     </main>
   </body>
